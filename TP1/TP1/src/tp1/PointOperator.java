@@ -6,7 +6,7 @@ public final class PointOperator {
 
     // TODO appliquer la translation sur le vecteur d'entree.
     public static void translate(Double[] vector, Double[] translateVector) {
-        // ...
+        // ok test
     }
 
     // TODO appliquer la translation sur le vecteur d'entree.
