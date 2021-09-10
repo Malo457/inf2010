@@ -4,7 +4,6 @@ import java.util.*;
 
 public final class PointOperator {
 
-    // TODO appliquer la translation sur le vecteur d'entree.
     public static void translate(Double[] vector, Double[] translateVector) {
 
         for(int dimension = 0; dimension < vector.length; dimension++) {
@@ -13,7 +12,6 @@ public final class PointOperator {
 
     }
 
-    // TODO appliquer la rotation sur le vecteur d'entree.
     public static void rotate(Double[] vector, Double[][] rotationMatrix) {
 
         if (vector.length != rotationMatrix[1].length) return; //exit function if multiplication is not valid
@@ -29,7 +27,6 @@ public final class PointOperator {
 
     }
 
-    // TODO appliquer la division sur le vecteur d'entree.
     public static void divide(Double[] vector, Double divider) {
 
         for(int dimension = 0; dimension < vector.length; dimension++) {
@@ -37,7 +34,6 @@ public final class PointOperator {
         }
     }
 
-    // TODO appliquer la multiplication sur le vecteur d'entree.
     public static void multiply(Double[] vector, Double multiplier) {
 
         for(int dimension = 0; dimension < vector.length; dimension++) {
@@ -46,7 +42,6 @@ public final class PointOperator {
 
     }
 
-    // TODO appliquer laddition sur le vecteur d'entree.
     public static void add(Double[] vector, Double adder) {
 
         for(int dimension = 0; dimension < vector.length; dimension++) {

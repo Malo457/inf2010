@@ -5,7 +5,7 @@ import java.util.Collection;
 public class Ellipse extends BaseShape {
     // TODO creer une ellipse avec une largeur et une longueur.
     public Ellipse(Double widthRadius, Double heightRadius) {
-        // ...
+
     }
 
     // TODO creer une ellipse avec les dimensions contenu dans un Point.
