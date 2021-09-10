@@ -6,11 +6,16 @@ public final class PointOperator {
 
     // TODO appliquer la translation sur le vecteur d'entree.
     public static void translate(Double[] vector, Double[] translateVector) {
-        // ok test
+
+        for(int dimension = 0; dimension < vector.length; dimension++) {
+            vector[dimension] += translateVector[dimension];
+        }
+
     }
 
     // TODO appliquer la translation sur le vecteur d'entree.
     public static void rotate(Double[] vector, Double[][] rotationMatrix) {
+
         // ...
     }
 
@@ -21,7 +26,11 @@ public final class PointOperator {
 
     // TODO appliquer la translation sur le vecteur d'entree.
     public static void multiply(Double[] vector, Double multiplier) {
-        // ...
+
+        for(int dimension = 0; dimension < vector.length; dimension++) {
+            vector[dimension] *= multiplier;
+        }
+
     }
 
     // TODO appliquer la translation sur le vecteur d'entree.
