@@ -8,48 +8,49 @@ public class BaseShape implements Cloneable {
 
     // TODO Initialiser la liste de points.
     public BaseShape() {
-        // ...
+        this.coords = new ArrayList<>();
     }
 
     // TODO prendre une liste de points et creer une nouvelle forme.
     public BaseShape(Collection<Point2d> coords) {
-        // ...
+        this.coords = coords;
     }
 
     // TODO ajouter ou retirer des coordonnees a la liste de points.
     public BaseShape add(Point2d coord) {
-        // ...
-        return null;
+        //this.coords.add(coord);
+        return this;
     }
     public BaseShape add(BaseShape shape) {
-        // ...
-        return null;
+        this.coords.addAll(shape.getCoords());
+        return this;
     }
     public BaseShape addAll(Collection<Point2d> coords) {
-        // ...
-        return null;
+        this.coords.addAll(coords);
+        return this;
     }
     public BaseShape remove(Point2d coord) {
-        // ...
-        return null;
+        this.coords.remove(coord);
+        return this;
     }
     public BaseShape remove(BaseShape shape) {
-        // ...
-        return null;
+        this.coords.removeAll(shape.getCoords());
+        return this;
     }
     public BaseShape removeAll(Collection<Point2d> coords) {
-        // ...
-        return null;
+        this.coords.removeAll(coords);
+        return this;
     }
 
     // TODO retourner les coordonnees de la liste.
     public Collection<Point2d> getCoords() {
-        return null;
+        return this.coords;
     }
 
     // TODO retourner une nouvelle liste ou tous les points sont des copy
     public Collection<Point2d> getCoordsDeepCopy() {
         return null;
+        //return this.coords.clone();
     }
 
     // TODO appliquer la translation sur la forme.
@@ -65,6 +66,7 @@ public class BaseShape implements Cloneable {
     // TODO donner la plus grande valeur en X
     public Double getMaxX() {
         return null;
+        //return (this.coords.X()).max();
     }
 
     // TODO donner la plus grande valeur en Y
