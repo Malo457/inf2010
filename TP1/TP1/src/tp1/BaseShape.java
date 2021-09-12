@@ -6,19 +6,16 @@ import java.util.stream.Collectors;
 public class BaseShape implements Cloneable {
     private Collection<Point2d> coords;
 
-    // TODO Initialiser la liste de points.
     public BaseShape() {
         this.coords = new ArrayList<>();
     }
 
-    // TODO prendre une liste de points et creer une nouvelle forme.
     public BaseShape(Collection<Point2d> coords) {
         this.coords = coords;
     }
 
-    // TODO ajouter ou retirer des coordonnees a la liste de points.
     public BaseShape add(Point2d coord) {
-        //this.coords.add(coord);
+        this.coords.add(coord);
         return this;
     }
     public BaseShape add(BaseShape shape) {
@@ -42,59 +39,75 @@ public class BaseShape implements Cloneable {
         return this;
     }
 
-    // TODO retourner les coordonnees de la liste.
     public Collection<Point2d> getCoords() {
-        return this.coords;
+        return new ArrayList<Point2d>(this.coords);
     }
 
-    // TODO retourner une nouvelle liste ou tous les points sont des copy
     public Collection<Point2d> getCoordsDeepCopy() {
-        return null;
-        //return this.coords.clone();
+        Collection<Point2d> newColl = new ArrayList<>();
+        for (Point2d coord : this.coords) {
+            Point2d newPoint = new Point2d(coord.X(), coord.Y());
+            newColl.add(newPoint);
+        }
+        return newColl;
     }
 
-    // TODO appliquer la translation sur la forme.
+
     public BaseShape translate(Point2d point) {
-        return null;
-    }
-
-    // TODO appliquer la rotation sur la forme.
-    public BaseShape rotate(Double angle) {
-        return null;
-    }
-
-    // TODO donner la plus grande valeur en X
-    public Double getMaxX() {
-        return null;
-        //return (this.coords.X()).max();
-    }
-
-    // TODO donner la plus grande valeur en Y
-    public Double getMaxY() {
-        return null;
-    }
-
-    // TODO donner les plus grandes valeurs en X et Y
-    public Point2d getMaxCoord() {
-        return null;
-    }
-
-    // TODO donner la plus petite valeur en X
-    public Double getMinX() {
-        return null;
-    }
-    // TODO donner la plus petite valeur en Y
-    public Double getMinY() {
-        return null;
-    }
-
-    // TODO donner les plus petites valeurs en X et Y
-    public Point2d getMinCoord() {
-        return null;
-    }
-
-    // TODO retourner une nouvelle forme.
-    public BaseShape clone() {
+        for (Point2d coord : this.coords){
+            coord = coord.translate(point);
+        }
         return this;
+    }
+
+    public BaseShape rotate(Double angle) {
+        for (Point2d coord : this.coords){
+            coord = coord.rotate(angle);
+        }
+        return this;
+    }
+
+    public Double getMaxX() {
+        Point2d max = this.coords.iterator().next();
+        for(Point2d coord : this.coords) {
+            if (coord.X() >= max.X()) max = coord;
+        }
+        return max.X();
+    }
+
+    public Double getMaxY() {
+        Point2d max = this.coords.iterator().next();
+        for(Point2d coord : this.coords) {
+            if (coord.Y() >= max.Y()) max = coord;
+        }
+        return max.Y();
+    }
+
+    public Point2d getMaxCoord() {
+        return new Point2d(this.getMaxX(), this.getMaxY());
+    }
+
+    public Double getMinX() {
+        Point2d min = this.coords.iterator().next();
+        for(Point2d coord : this.coords) {
+            if (coord.X() <= min.X()) min = coord;
+        }
+        return min.X();
+    }
+
+    public Double getMinY() {
+        Point2d min = this.coords.iterator().next();
+        for(Point2d coord : this.coords) {
+            if (coord.Y() <= min.Y()) min = coord;
+        }
+        return min.Y();
+    }
+
+    public Point2d getMinCoord() {
+        return new Point2d(this.getMinX(), this.getMinY());
+    }
+
+    public BaseShape clone() {
+        return new BaseShape(this.getCoordsDeepCopy());
     }
 }
