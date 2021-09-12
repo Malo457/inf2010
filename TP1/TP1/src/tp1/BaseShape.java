@@ -11,7 +11,7 @@ public class BaseShape implements Cloneable {
     }
 
     public BaseShape(Collection<Point2d> coords) {
-        this.coords = coords;
+        this.coords = new ArrayList<>(coords);
     }
 
     public BaseShape add(Point2d coord) {

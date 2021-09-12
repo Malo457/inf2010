@@ -1,11 +1,17 @@
 package tp1;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Ellipse extends BaseShape {
-    // TODO creer une ellipse avec une largeur et une longueur.
+
     public Ellipse(Double widthRadius, Double heightRadius) {
-        //super(new Point2d(widthRadius, heightRadius));
+        super();
+        for (int degre = 0; degre <= 360; degre++) {
+            double x = widthRadius * Math.sin(Math.toRadians(degre));
+            double y = heightRadius * Math.cos(Math.toRadians(degre));
+            this.add(new Point2d(x, y));
+        }
     }
 
     public Ellipse(Point2d dimensions) {

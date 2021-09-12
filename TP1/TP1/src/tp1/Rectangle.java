@@ -5,7 +5,17 @@ import java.util.Collection;
 public class Rectangle extends BaseShape {
     // TODO creer un rectangle avec une largeur et une longueur.
     public Rectangle(Double width, Double height) {
-        // ...
+        super();
+        for (double i = 0; i <= width; i+= width) {
+            for (double j = 0; j <= height; j++) {
+                this.add(new Point2d(i, j));
+            }
+        }
+        for (double i = 0; i <= height; i+= height) {
+            for (double j = 0; j <= width; j++) {
+                this.add(new Point2d(j, i));
+            }
+        }
     }
 
     public Rectangle(Point2d dimensions) {
