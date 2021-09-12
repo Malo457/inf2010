@@ -25,7 +25,7 @@ public final class LetterFactory {
 
     // TODO
     public static BaseShape create_l() {
-        return null;
+        return new Rectangle(stripeThickness, maxHeight);
     }
 
     // TODO

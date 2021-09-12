@@ -3,16 +3,17 @@ package tp1;
 import java.util.Collection;
 
 public class Rectangle extends BaseShape {
-    // TODO creer un rectangle avec une largeur et une longueur.
+    final double POINT_FREQUENCY = 0.5;
+
     public Rectangle(Double width, Double height) {
         super();
         for (double i = 0; i <= width; i+= width) {
-            for (double j = 0; j <= height; j++) {
+            for (double j = 0; j <= height; j+=POINT_FREQUENCY) {
                 this.add(new Point2d(i, j));
             }
         }
         for (double i = 0; i <= height; i+= height) {
-            for (double j = 0; j <= width; j++) {
+            for (double j = 0; j <= width; j+=POINT_FREQUENCY) {
                 this.add(new Point2d(j, i));
             }
         }

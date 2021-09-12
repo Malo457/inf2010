@@ -13,18 +13,20 @@ public final class PointOperator {
     }
 
     public static void rotate(Double[] vector, Double[][] rotationMatrix) {
-
         if (vector.length != rotationMatrix[1].length) return; //exit function if multiplication is not valid
 
+        Double[] newVector = new Double[vector.length];
         for(int firstDimension = 0; firstDimension < vector.length; firstDimension++) {
             double result = 0;
-            for(int secondDimension = 0; secondDimension < rotationMatrix[1].length; secondDimension++) {
+            for(int secondDimension = 0; secondDimension < rotationMatrix[firstDimension].length; secondDimension++) {
                 result += vector[secondDimension] * rotationMatrix[firstDimension][secondDimension];
             }
-            vector[firstDimension] = result;
-
+            newVector[firstDimension] = result;
         }
 
+        for(int i = 0; i < vector.length; ++i){
+            vector[i] = newVector[i];
+        }
     }
 
     public static void divide(Double[] vector, Double divider) {
