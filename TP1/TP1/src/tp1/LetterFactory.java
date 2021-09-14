@@ -50,7 +50,7 @@ public final class LetterFactory {
     public static BaseShape create_A() {
         BaseShape letterA = create_V();
         letterA.rotate(-Math.PI);
-        Rectangle part2 = new Rectangle(halfMaxHeight, stripeThickness).rotate(Math.PI);//translate(new Point2d(0.0, halfMaxHeight));
+        Rectangle part2 = new Rectangle(stripeThickness, halfMaxHeight).rotate(Math.PI);//translate(new Point2d(0.0, halfMaxHeight));
         letterA.add(part2.translate(new Point2d(0.0, halfMaxHeight)));
         return letterA;
     }
@@ -76,9 +76,9 @@ public final class LetterFactory {
     // TODO
     public static BaseShape create_B() {
         BaseShape letterB = new BaseShape();
-        letterB.add(new Ellipse(halfMaxWidth, halfMaxHeight).translate(new Point2d(0.0, halfMaxHeight)));
-        letterB.add(new Ellipse(halfMaxWidth, halfMaxHeight));
-        letterB.add(new Rectangle(stripeThickness, maxHeight).translate(new Point2d(0.0, -50.0)));
+        letterB.add(new Ellipse(maxWidth, halfMaxHeight).translate(new Point2d(0.0, halfMaxHeight)));
+        letterB.add(new Ellipse(maxWidth, halfMaxHeight));
+        letterB.add(new Rectangle(stripeThickness, maxHeight).translate(new Point2d(-40.0, -50.0)));
         return letterB;
     }
 }

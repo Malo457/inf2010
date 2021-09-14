@@ -7,6 +7,8 @@ public class Ellipse extends BaseShape {
 
     public Ellipse(Double widthRadius, Double heightRadius) {
         super();
+        widthRadius /= 2.0;
+        heightRadius /= 2.0;
         for (int degre = 0; degre <= 360; degre++) {
             double x = widthRadius * Math.sin(Math.toRadians(degre));
             double y = heightRadius * Math.cos(Math.toRadians(degre));
