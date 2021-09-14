@@ -12,23 +12,26 @@ public final class LetterFactory {
 
     public static BaseShape create_e() {
         BaseShape C = create_C();
-        Rectangle rect = new Rectangle(stripeThickness, maxWidth).rotate(90.0);
+        Rectangle rect = new Rectangle(maxWidth, stripeThickness).translate(new Point2d(-halfMaxWidth, 0.0));
         return C.add(rect);
     }
 
     public static BaseShape create_a() {
-        BaseShape C = create_C();
-        Rectangle rect = new Rectangle(stripeThickness, maxHeight).translate(new Point2d(halfMaxWidth, 0.0));
-        return C.add(rect);
+        Ellipse bigEllipse = new Ellipse(maxWidth, maxHeight);
+        Ellipse smallEllipse = new Ellipse(maxWidth - stripeThickness, maxHeight- stripeThickness);
+        bigEllipse.remove(smallEllipse);
+
+        Rectangle rect = new Rectangle(stripeThickness, maxHeight).translate(new Point2d(halfMaxWidth , -halfMaxHeight));
+        return bigEllipse.add(rect);
     }
 
     public static BaseShape create_C() {
         Ellipse bigEllipse = new Ellipse(maxWidth, maxHeight);
         Ellipse smallEllipse = new Ellipse(maxWidth - stripeThickness, maxHeight- stripeThickness);
         bigEllipse.remove(smallEllipse);
-
-        Rectangle rectToRemove = new Rectangle(stripeThickness, maxHeight / 2);
-        rectToRemove.translate(new Point2d(halfMaxWidth / 2, 0.0));
+         // a revoir pour a quel point des un c et si cest trop similaire
+        Rectangle rectToRemove = new Rectangle(halfMaxWidth, halfMaxHeight / 2.0);
+        rectToRemove.translate(new Point2d(halfMaxWidth / 2.0D, halfStripeThickness));
         bigEllipse.remove(rectToRemove);
 
         return bigEllipse;
@@ -41,7 +44,7 @@ public final class LetterFactory {
         Rectangle rect = new Rectangle(stripeThickness, maxHeight);
         Circle circle = new Circle(halfStripeThickness);
 
-        rect.remove((new Rectangle(stripeThickness, maxHeight / 4)).translate(new Point2d(0.0, 3 * maxHeight / 4)));
+        rect.remove((new Rectangle(stripeThickness, maxHeight / 4)).translate(new Point2d(0.0,  - maxHeight / 2)));
         rect.add(circle);
         return rect;
     }

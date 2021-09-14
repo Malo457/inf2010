@@ -11,10 +11,10 @@ public class Main {
         System.out.println("Bienvenue au premier labo de INF2010!");
         LetterPlacer letterPlacer = new LetterPlacer();
         letterPlacer.placeNext('l');
-        letterPlacer.placeNext('A');
+        letterPlacer.placeNext('a');
         letterPlacer.placeNextln('B');
         letterPlacer.placeNext('e');
-        letterPlacer.placeNext('l');
+        letterPlacer.placeNext('C');
         letterPlacer.placeNext('l');
         letterPlacer.placeNext('e');
         letterPlacer.placeNextln('V');
