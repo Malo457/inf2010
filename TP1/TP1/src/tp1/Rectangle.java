@@ -7,16 +7,16 @@ public class Rectangle extends BaseShape {
 
     public Rectangle(Double width, Double height) {
         super();
-        for (double i = 0; i <= width; i+= width) {
+        for (double i = 0; i < width; i+= width) {
             for (double j = 0; j <= height; j+=POINT_FREQUENCY) {
                 this.add(new Point2d(i, j));
             }
         }
-        for (double i = 0; i <= height; i+= height) {
+        /*for (double i = 0; i < height; i+= height) {
             for (double j = 0; j <= width; j+=POINT_FREQUENCY) {
                 this.add(new Point2d(j, i));
             }
-        }
+        }*/
     }
 
     public Rectangle(Point2d dimensions) {

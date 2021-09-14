@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Bienvenue au premier labo de INF2010!");
         LetterPlacer letterPlacer = new LetterPlacer();
         letterPlacer.placeNext('l');
-        letterPlacer.placeNext('a');
+        letterPlacer.placeNext('A');
         letterPlacer.placeNextln('B');
         letterPlacer.placeNext('e');
         letterPlacer.placeNext('l');

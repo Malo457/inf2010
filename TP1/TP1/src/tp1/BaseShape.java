@@ -68,14 +68,16 @@ public class BaseShape implements Cloneable {
     }
 
     public Double getMaxX() {
+        if (this.coords.size() == 0) return 0.0;
         Point2d max = this.coords.iterator().next();
         for(Point2d coord : this.coords) {
-            if (coord.X() >= max.X()) max = coord;
+            if (coord.X() > max.X()) max = coord;
         }
         return max.X();
     }
 
     public Double getMaxY() {
+        if (this.coords.size() == 0) return 0.0;
         Point2d max = this.coords.iterator().next();
         for(Point2d coord : this.coords) {
             if (coord.Y() >= max.Y()) max = coord;
@@ -88,6 +90,7 @@ public class BaseShape implements Cloneable {
     }
 
     public Double getMinX() {
+        if (this.coords.size() == 0) return 0.0;
         Point2d min = this.coords.iterator().next();
         for(Point2d coord : this.coords) {
             if (coord.X() <= min.X()) min = coord;
@@ -96,6 +99,7 @@ public class BaseShape implements Cloneable {
     }
 
     public Double getMinY() {
+        if (this.coords.size() == 0) return 0.0;
         Point2d min = this.coords.iterator().next();
         for(Point2d coord : this.coords) {
             if (coord.Y() <= min.Y()) min = coord;
