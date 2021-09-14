@@ -3,10 +3,10 @@ package tp1;
 public final class LetterFactory {
     final static Double maxHeight = 200.0;
     final static Double maxWidth = maxHeight / 2.5;
-    final static Double halfMaxHeight = maxHeight / 2;
-    final static Double halfMaxWidth = maxWidth / 2;
-    final static Double stripeThickness = maxHeight / 8;
-    final static Double halfStripeThickness = stripeThickness / 2;
+    final static Double halfMaxHeight = maxHeight / 2.0; // avant 2
+    final static Double halfMaxWidth = maxWidth / 2.0; // avant 2
+    final static Double stripeThickness = maxHeight / 8.0; // avant 8
+    final static Double halfStripeThickness = stripeThickness / 2.0; // avant 2
 
     // TODO
     public static BaseShape create_e() {
@@ -60,6 +60,10 @@ public final class LetterFactory {
 
     // TODO
     public static BaseShape create_B() {
-        return new Rectangle(stripeThickness, maxHeight);
+        BaseShape letterB = new BaseShape();
+        letterB.add(new Ellipse(halfMaxWidth, halfMaxHeight).translate(new Point2d(0.0, halfMaxHeight)));
+        letterB.add(new Ellipse(halfMaxWidth, halfMaxHeight));
+        letterB.add(new Rectangle(stripeThickness, maxHeight).translate(new Point2d(0.0, -50.0)));
+        return letterB;
     }
 }
