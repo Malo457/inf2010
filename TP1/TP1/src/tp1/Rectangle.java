@@ -12,11 +12,11 @@ public class Rectangle extends BaseShape {
                 this.add(new Point2d(i, j));
             }
         }
-        /*for (double i = 0; i < height; i+= height) {
+        for (double i = 0; i < height; i+= height) {
             for (double j = 0; j <= width; j+=POINT_FREQUENCY) {
                 this.add(new Point2d(j, i));
             }
-        }*/
+        }
     }
 
     public Rectangle(Point2d dimensions) {

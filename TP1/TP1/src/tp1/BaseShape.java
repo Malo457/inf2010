@@ -1,7 +1,6 @@
 package tp1;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class BaseShape implements Cloneable {
     private Collection<Point2d> coords;
@@ -40,7 +39,7 @@ public class BaseShape implements Cloneable {
     }
 
     public Collection<Point2d> getCoords() {
-        return new ArrayList<Point2d>(this.coords);
+        return new ArrayList<>(this.coords);
     }
 
     public Collection<Point2d> getCoordsDeepCopy() {
@@ -55,14 +54,14 @@ public class BaseShape implements Cloneable {
 
     public BaseShape translate(Point2d point) {
         for (Point2d coord : this.coords){
-            coord = coord.translate(point);
+            coord.translate(point);
         }
         return this;
     }
 
     public BaseShape rotate(Double angle) {
         for (Point2d coord : this.coords){
-            coord = coord.rotate(angle);
+            coord.rotate(angle);
         }
         return this;
     }
