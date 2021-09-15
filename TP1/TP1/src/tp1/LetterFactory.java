@@ -62,7 +62,7 @@ public final class LetterFactory {
     public static BaseShape create_V() {
         BaseShape letterV = new BaseShape();
         letterV.add(new Rectangle(halfStripeThickness, maxHeight).rotate(-3.0));
-        letterV.add(new Rectangle(halfStripeThickness, maxHeight).rotate(3.0));
+        letterV.add(new Rectangle(halfStripeThickness, maxHeight).rotate(3.0).translate(new Point2d(-10.0, 0.0)));
         return letterV;
     }
 
@@ -80,7 +80,7 @@ public final class LetterFactory {
     // TODO
     public static BaseShape create_r() {
         BaseShape letter_r = create_n();
-        letter_r.remove(new Rectangle(halfStripeThickness, halfMaxHeight + 25.0).translate(new Point2d(-54 + maxWidth, -25.0)));
+        letter_r.remove(new Rectangle(halfStripeThickness, halfMaxHeight + 24.0).translate(new Point2d(-54 + maxWidth, -24.0)));
         return letter_r;
     }
 
