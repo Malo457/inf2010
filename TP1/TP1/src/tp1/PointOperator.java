@@ -5,11 +5,9 @@ import java.util.*;
 public final class PointOperator {
 
     public static void translate(Double[] vector, Double[] translateVector) {
-
         for(int dimension = 0; dimension < vector.length; dimension++) {
             vector[dimension] += translateVector[dimension];
         }
-
     }
 
     public static void rotate(Double[] vector, Double[][] rotationMatrix) {
@@ -24,28 +22,22 @@ public final class PointOperator {
             newVector[firstDimension] = result;
         }
 
-        for(int i = 0; i < vector.length; ++i){
-            vector[i] = newVector[i];
-        }
+        System.arraycopy(newVector, 0, vector, 0, vector.length);
     }
 
     public static void divide(Double[] vector, Double divider) {
-
         for(int dimension = 0; dimension < vector.length; dimension++) {
             vector[dimension] /= divider;
         }
     }
 
     public static void multiply(Double[] vector, Double multiplier) {
-
         for(int dimension = 0; dimension < vector.length; dimension++) {
             vector[dimension] *= multiplier;
         }
-
     }
 
     public static void add(Double[] vector, Double adder) {
-
         for(int dimension = 0; dimension < vector.length; dimension++) {
             vector[dimension] += adder;
         }

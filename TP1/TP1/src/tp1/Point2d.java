@@ -13,6 +13,7 @@ public class Point2d extends AbstractPoint {
     }
 
     public Double X() { return vector[X];}
+
     public Double Y() { return vector[Y];}
 
     @Override
@@ -32,7 +33,6 @@ public class Point2d extends AbstractPoint {
     }
 
     public Point2d rotate(Double angle) {
-
         double x = this.vector[this.X];
         double y = this.vector[this.Y];
 
@@ -43,7 +43,6 @@ public class Point2d extends AbstractPoint {
         this.vector[this.Y] = newY;
 
         return this;
-
     }
 
     @Override

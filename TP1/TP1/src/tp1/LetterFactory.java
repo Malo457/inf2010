@@ -11,9 +11,9 @@ public final class LetterFactory {
     final static Double halfStripeThickness = stripeThickness / 2.0; // avant 2
 
     public static BaseShape create_e() {
-        BaseShape C = create_C();
-        Rectangle rect = new Rectangle(maxWidth, stripeThickness).translate(new Point2d(-halfMaxWidth, 0.0));
-        return C.add(rect);
+        BaseShape letterE = create_C();
+        Rectangle horizontalRect = new Rectangle(maxWidth, stripeThickness).translate(new Point2d(-halfMaxWidth, 0.0));
+        return letterE.add(horizontalRect);
     }
 
     public static BaseShape create_a() {
@@ -21,15 +21,15 @@ public final class LetterFactory {
         Ellipse smallEllipse = new Ellipse(maxWidth - stripeThickness, maxHeight- stripeThickness);
         bigEllipse.remove(smallEllipse);
 
-        Rectangle rect = new Rectangle(halfStripeThickness, maxHeight).translate(new Point2d(halfMaxWidth , -halfMaxHeight));
-        return bigEllipse.add(rect);
+        Rectangle verticalRect = new Rectangle(halfStripeThickness, maxHeight).translate(new Point2d(halfMaxWidth , -halfMaxHeight));
+        BaseShape letterA = bigEllipse.add(verticalRect);
+        return letterA;
     }
 
     public static BaseShape create_C() {
         Ellipse bigEllipse = new Ellipse(maxWidth, maxHeight);
         Ellipse smallEllipse = new Ellipse(maxWidth - stripeThickness, maxHeight- stripeThickness);
         bigEllipse.remove(smallEllipse);
-         // a revoir pour a quel point des un c et si cest trop similaire
         Rectangle rectToRemove = new Rectangle(halfMaxWidth, halfMaxHeight / 2.0);
         rectToRemove.translate(new Point2d(halfMaxWidth / 2.0D, halfStripeThickness));
         bigEllipse.remove(rectToRemove);
@@ -41,20 +41,20 @@ public final class LetterFactory {
 
     public static BaseShape create_i() {
         Rectangle rect = new Rectangle(halfStripeThickness, maxHeight).translate(new Point2d(0.0, - halfStripeThickness));
-        Circle circle = new Circle(stripeThickness);
-        circle.translate(new Point2d(halfStripeThickness / 2,0.0));
-        Rectangle rectToRemove = new Rectangle(stripeThickness,  maxHeight / 5);
+        Circle dot = new Circle(stripeThickness);
+        dot.translate(new Point2d(halfStripeThickness / 2.0,0.0));
+        Rectangle rectToRemove = new Rectangle(stripeThickness,  maxHeight / 5.0);
 
         rect.remove(rectToRemove);
-        rect.add(circle);
+        rect.add(dot);
         return rect;
     }
 
     public static BaseShape create_A() {
         BaseShape letterA = create_V();
         letterA.rotate(-Math.PI);
-        Rectangle part2 = new Rectangle(halfMaxWidth, halfStripeThickness);//translate(new Point2d(0.0, halfMaxHeight));
-        letterA.add(part2.translate(new Point2d(-12.0, halfMaxHeight + 15.0)));
+        Rectangle horizontalBar = new Rectangle(halfMaxWidth, halfStripeThickness);
+        letterA.add(horizontalBar.translate(new Point2d(-12.0, halfMaxHeight + 15.0)));
         return letterA;
     }
 
@@ -66,19 +66,19 @@ public final class LetterFactory {
     }
 
     public static BaseShape create_n() {
-        BaseShape letter_n = new BaseShape();
-        letter_n.add(new Ellipse(maxWidth, maxHeight));
-        letter_n.remove(new Ellipse(maxWidth - stripeThickness - 3, maxHeight - stripeThickness));
-        letter_n.remove(new Rectangle(maxWidth, halfMaxHeight).translate(new Point2d(-40.0, -100 + halfMaxHeight)));
-        letter_n.add(new Rectangle(halfStripeThickness, halfMaxHeight).translate(new Point2d(-54 + maxWidth, 0.0)));
-        letter_n.add(new Rectangle(halfStripeThickness, maxHeight).translate(new Point2d(-40.0, -100.0)));
-        return letter_n;
+        BaseShape letterN = new BaseShape();
+        letterN.add(new Ellipse(maxWidth, maxHeight));
+        letterN.remove(new Ellipse(maxWidth - stripeThickness - 3.0, maxHeight - stripeThickness));
+        letterN.remove(new Rectangle(maxWidth, halfMaxHeight).translate(new Point2d(-40.0, -100.0 + halfMaxHeight)));
+        letterN.add(new Rectangle(halfStripeThickness, halfMaxHeight).translate(new Point2d(-54.0 + maxWidth, 0.0)));
+        letterN.add(new Rectangle(halfStripeThickness, maxHeight).translate(new Point2d(-40.0, -100.0)));
+        return letterN;
     }
 
     public static BaseShape create_r() {
-        BaseShape letter_r = create_n();
-        letter_r.remove(new Rectangle(halfStripeThickness, halfMaxHeight + 24.0).translate(new Point2d(-54 + maxWidth, -24.0)));
-        return letter_r;
+        BaseShape letterR = create_n();
+        letterR.remove(new Rectangle(halfStripeThickness, halfMaxHeight + 24.0).translate(new Point2d(-54.0 + maxWidth, -24.0)));
+        return letterR;
     }
 
     public static BaseShape create_B() {

@@ -17,14 +17,17 @@ public class BaseShape implements Cloneable {
         this.coords.add(coord);
         return this;
     }
+
     public BaseShape add(BaseShape shape) {
         this.coords.addAll(shape.getCoords());
         return this;
     }
+
     public BaseShape addAll(Collection<Point2d> coords) {
         this.coords.addAll(coords);
         return this;
     }
+
     public BaseShape remove(Point2d coord) {
         this.coords.remove(coord);
         return this;
@@ -33,6 +36,7 @@ public class BaseShape implements Cloneable {
         this.coords.removeAll(shape.getCoords());
         return this;
     }
+
     public BaseShape removeAll(Collection<Point2d> coords) {
         this.coords.removeAll(coords);
         return this;
@@ -44,13 +48,13 @@ public class BaseShape implements Cloneable {
 
     public Collection<Point2d> getCoordsDeepCopy() {
         Collection<Point2d> newColl = new ArrayList<>();
+
         for (Point2d coord : this.coords) {
             Point2d newPoint = new Point2d(coord.X(), coord.Y());
             newColl.add(newPoint);
         }
         return newColl;
     }
-
 
     public BaseShape translate(Point2d point) {
         for (Point2d coord : this.coords){
@@ -68,6 +72,7 @@ public class BaseShape implements Cloneable {
 
     public Double getMaxX() {
         if (this.coords.size() == 0) return 0.0;
+
         Point2d max = this.coords.iterator().next();
         for(Point2d coord : this.coords) {
             if (coord.X() > max.X()) max = coord;
@@ -77,6 +82,7 @@ public class BaseShape implements Cloneable {
 
     public Double getMaxY() {
         if (this.coords.size() == 0) return 0.0;
+
         Point2d max = this.coords.iterator().next();
         for(Point2d coord : this.coords) {
             if (coord.Y() >= max.Y()) max = coord;
@@ -90,6 +96,7 @@ public class BaseShape implements Cloneable {
 
     public Double getMinX() {
         if (this.coords.size() == 0) return 0.0;
+
         Point2d min = this.coords.iterator().next();
         for(Point2d coord : this.coords) {
             if (coord.X() <= min.X()) min = coord;
@@ -99,6 +106,7 @@ public class BaseShape implements Cloneable {
 
     public Double getMinY() {
         if (this.coords.size() == 0) return 0.0;
+
         Point2d min = this.coords.iterator().next();
         for(Point2d coord : this.coords) {
             if (coord.Y() <= min.Y()) min = coord;

@@ -5,10 +5,13 @@ import java.util.Collection;
 
 public class Ellipse extends BaseShape {
 
-    public Ellipse(Double widthRadius, Double heightRadius) {
+    double RATIO_RADIUS_DIAMETER = 2.0;
+
+    public Ellipse(Double width, Double height) {
         super();
-        widthRadius /= (2.0);
-        heightRadius /= (2.0);
+
+        Double widthRadius = width / RATIO_RADIUS_DIAMETER;
+        Double heightRadius = height / RATIO_RADIUS_DIAMETER;
 
         for(double i = -widthRadius; i < widthRadius; i++) {
             for(double j = -heightRadius; j < heightRadius; j++) {
