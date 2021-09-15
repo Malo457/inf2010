@@ -53,35 +53,46 @@ public final class LetterFactory {
     public static BaseShape create_A() {
         BaseShape letterA = create_V();
         letterA.rotate(-Math.PI);
-        Rectangle part2 = new Rectangle(stripeThickness, halfMaxHeight).rotate(Math.PI);//translate(new Point2d(0.0, halfMaxHeight));
-        letterA.add(part2.translate(new Point2d(0.0, halfMaxHeight)));
+        Rectangle part2 = new Rectangle(halfMaxWidth, halfStripeThickness);//translate(new Point2d(0.0, halfMaxHeight));
+        letterA.add(part2.translate(new Point2d(-12.0, halfMaxHeight + 15.0)));
         return letterA;
     }
 
     // TODO
     public static BaseShape create_V() {
         BaseShape letterV = new BaseShape();
-        letterV.add(new Rectangle(stripeThickness, maxHeight).rotate(-3.0));
-        letterV.add(new Rectangle(stripeThickness, maxHeight).rotate(3.0));
+        letterV.add(new Rectangle(halfStripeThickness, maxHeight).rotate(-3.0));
+        letterV.add(new Rectangle(halfStripeThickness, maxHeight).rotate(3.0));
         return letterV;
     }
 
     // TODO
     public static BaseShape create_n() {
-        return new Rectangle(stripeThickness, maxHeight);
+        BaseShape letter_n = new BaseShape();
+        letter_n.add(new Ellipse(maxWidth, maxHeight));
+        letter_n.remove(new Ellipse(maxWidth - stripeThickness - 3, maxHeight - stripeThickness));
+        letter_n.remove(new Rectangle(maxWidth, halfMaxHeight).translate(new Point2d(-40.0, -100 + halfMaxHeight)));
+        letter_n.add(new Rectangle(halfStripeThickness, halfMaxHeight).translate(new Point2d(-54 + maxWidth, 0.0)));
+        letter_n.add(new Rectangle(halfStripeThickness, maxHeight).translate(new Point2d(-40.0, -100.0)));
+        return letter_n;
     }
 
     // TODO
     public static BaseShape create_r() {
-        return new Rectangle(stripeThickness, maxHeight);
+        BaseShape letter_r = create_n();
+        letter_r.remove(new Rectangle(halfStripeThickness, halfMaxHeight + 25.0).translate(new Point2d(-54 + maxWidth, -25.0)));
+        return letter_r;
     }
 
     // TODO
     public static BaseShape create_B() {
         BaseShape letterB = new BaseShape();
         letterB.add(new Ellipse(maxWidth, halfMaxHeight).translate(new Point2d(0.0, halfMaxHeight)));
+        letterB.remove(new Ellipse(maxWidth - stripeThickness, halfMaxHeight - stripeThickness).translate(new Point2d(0.0, halfMaxHeight)));
         letterB.add(new Ellipse(maxWidth, halfMaxHeight));
-        letterB.add(new Rectangle(stripeThickness, maxHeight).translate(new Point2d(-40.0, -50.0)));
+        letterB.remove(new Ellipse(maxWidth - stripeThickness, halfMaxHeight - stripeThickness));
+        letterB.remove(new Rectangle(stripeThickness, maxHeight).translate(new Point2d(-40.0, -50.0)));
+        letterB.add(new Rectangle(halfStripeThickness, maxHeight).translate(new Point2d(-25.0, -50.0)));
         return letterB;
     }
 }
