@@ -2,10 +2,8 @@
 	b. Donnez un brève description du patron et comment it est utilisé dans le tp.
 
 
-//Espace pour écrire 
-//
-//
-//
+Un autre patron de conception utilisé dans le tp est le patron créateur. Celui-ci est utilisé pour créer les lettres. Le patron créateur consiste à donner la responsabilité de créer un objet à un autre. Ici, la responsabilité de créer des formes revient aux lettres, qui sont liées aux formes mais sont tout de même un objet distinct.
+
 
 2. Donnez une explication du patron composite.
 	b. Comment le patron composite aurait pu être utilisé dans ce travail pratique? 
