@@ -12,7 +12,7 @@ public final class LetterFactory {
 
     public static BaseShape create_e() {
         BaseShape C = create_C();
-        Rectangle rect = new Rectangle(maxWidth, halfStripeThickness).translate(new Point2d(-halfMaxWidth, 0.0));
+        Rectangle rect = new Rectangle(maxWidth, stripeThickness).translate(new Point2d(-halfMaxWidth, 0.0));
         return C.add(rect);
     }
 
