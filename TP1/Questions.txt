@@ -1,6 +1,13 @@
 1.Identifiez un patron de conception autre que Fluent Builder dans le tp.
 	b. Donnez un brève description du patron et comment il est utilisé dans le tp.
 
+Le patron fabrique est utilisé dans ce TP. C'est un patron de création qui permet de créer des objets
+qui ont des similitudes (respecte une même interface) en laissant une classe créateur instancier tous ces
+objets. Le code de la création des objets est alors localisé dans la classe créateur qui implémente la
+création de tous les objets et lorsqu'on veut les instancier, on appelle cette classe. Dans notre cas, toutes
+les formes implémente l'interface BaseShape et toutes les lettres sont des BaseShapes. L'instanciation d'une
+lettre est localisé dans la classe LetterFactory (classe créateur) et cette classe est appelé lorsqu'on veut
+instancier une lettre.
 
 
 
@@ -8,7 +15,7 @@
 	b. Comment le patron composite aurait pu être utilisé dans ce travail pratique?
 
 2.a: Le patron composite est un patron structurel. Ce patron consiste à agencer des objets sous formes
-d'arbres (structure aborescente) ce qui permet de traiter ces structures comme des objets individuels.
+d'arbres (structure arborescente) ce qui permet de traiter ces structures comme des objets individuels.
 Tous les objets de la structure aborescente respectent la même interface (souvent nommé composants).
 Il y aura deux types d'objets dans la structure arborescente, des composites et des feuilles. Un composite
 est un élément qui possède des sous-éléments (enfants) alors qu'une feuille ne possède pas d'enfant, elle
@@ -17,8 +24,8 @@ L'utilisation de ce patron doit alors être utilisée avec une structure qui se 
 d'arbre. L'utilisateur peut simplement manipuler les éléments de la structure et la structure elle-même à
 partir de l'interface. En effet, lorsqu'on appelle une méthode sur l'interface, la structure va elle-même
 déleguer le travail aux divers éléments sans qu'on ai besoin de savoir la classe concrête de chaques
-objets et la tâche qu'ils exécutent. La requête sera alors traiter en descendant la structure pour souvent
-être exécuter par les feuiles. On peut alors traiter des structures arborescente complexes assez facilement
+objets et la tâche qu'ils exécutent. La requête sera alors traité en descendant la structure pour souvent
+être exécuté par les feuilles. On peut alors traiter des structures arborescentes complexes assez facilement
 et de manière uniforme.
 
 2.b: On aurait pu avoir une interface tel que base shape en ce moment, qui serait implémenter par Point2d (la
