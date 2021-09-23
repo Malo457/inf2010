@@ -2,7 +2,7 @@
 	b. Donnez un brève description du patron et comment il est utilisé dans le tp.
 
 Le patron fabrique est utilisé dans ce TP. C'est un patron de création qui permet de créer des objets
-qui ont des similitudes (respecte une même interface) en laissant une classe créateur instancier tous ces
+qui ont des similitudes (respectent une même interface) en laissant une classe créateur instancier tous ces
 objets. Le code de la création des objets est alors localisé dans la classe créateur qui implémente la
 création de tous les objets et lorsqu'on veut les instancier, on appelle cette classe. Dans notre cas, toutes
 les formes implémente l'interface BaseShape et toutes les lettres sont des BaseShapes. L'instanciation d'une
