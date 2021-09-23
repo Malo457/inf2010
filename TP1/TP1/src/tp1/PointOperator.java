@@ -1,7 +1,5 @@
 package tp1;
 
-import java.util.*;
-
 public final class PointOperator {
 
     public static void translate(Double[] vector, Double[] translateVector) {

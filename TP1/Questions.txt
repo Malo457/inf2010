@@ -16,7 +16,7 @@ instancier une lettre.
 
 2.a: Le patron composite est un patron structurel. Ce patron consiste à agencer des objets sous formes
 d'arbres (structure arborescente) ce qui permet de traiter ces structures comme des objets individuels.
-Tous les objets de la structure aborescente respectent la même interface (souvent nommé composants).
+Tous les objets de la structure arborescente respectent la même interface (souvent nommé composants).
 Il y aura deux types d'objets dans la structure arborescente, des composites et des feuilles. Un composite
 est un élément qui possède des sous-éléments (enfants) alors qu'une feuille ne possède pas d'enfant, elle
 est la dernière structure d'une certaine branche de l'arbre (à l'image d'une réelle feuille dans un arbre).
@@ -24,16 +24,16 @@ L'utilisation de ce patron doit alors être utilisée avec une structure qui se 
 d'arbre. L'utilisateur peut simplement manipuler les éléments de la structure et la structure elle-même à
 partir de l'interface. En effet, lorsqu'on appelle une méthode sur l'interface, la structure va elle-même
 déleguer le travail aux divers éléments sans qu'on ai besoin de savoir la classe concrête de chaques
-objets et la tâche qu'ils exécutent. La requête sera alors traité en descendant la structure pour souvent
+objets et la tâche qu'ils exécutent. La requête sera alors traitée en descendant la structure pour souvent
 être exécuté par les feuilles. On peut alors traiter des structures arborescentes complexes assez facilement
 et de manière uniforme.
 
 2.b: On aurait pu avoir une interface tel que base shape en ce moment, qui serait implémenter par Point2d (la
-feuille) et une autre classe tel que Lettre (composites). Chaque Lettre est formé de plusieurs formes (ses
-enfants) et lui délègue donc le travail. Les enfant pourraient eux aussi être formés de d'autres Lettre et on
+feuille) et une autre classe telle que Lettre (composites). Chaque Lettre est formé de plusieurs formes (ses
+enfants) et lui délègue donc le travail. Les enfants pourraient, eux aussi, être formés de d'autres Lettre et on
 descendrait alors la structure jusqu'au Point2d, la feuille. Par exemple, on appelle la structure à l'aide de
 l'interface pour dessinerUn_e(). Le e est un composite formée d'un c et d'un rectangle et donc appelle la fonction
-dessiner() de ses deux classes. Ces deux classes sont elles aussi formées de d'autres éléments et ainsi de suite
+dessiner() de ses deux classes. Ces deux classes sont, elles aussi, formées de d'autres éléments et ainsi de suite
 jusqu'à ce que les feuilles (Point2d) exécute leur fonction dessiner(). Les appelants récupèrent alors les points
 récursivement jusqu'à la forme de base qui additionnent le tout et dessine la lettre, ici le e.
 	   

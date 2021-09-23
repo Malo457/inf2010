@@ -1,6 +1,5 @@
 package tp1;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 public class Ellipse extends BaseShape {

@@ -1,7 +1,5 @@
 package tp1;
 
-import java.util.concurrent.RecursiveAction;
-
 public final class LetterFactory {
     final static Double maxHeight = 200.0;
     final static Double maxWidth = maxHeight / 2.5;
@@ -22,8 +20,7 @@ public final class LetterFactory {
         bigEllipse.remove(smallEllipse);
 
         Rectangle verticalRect = new Rectangle(halfStripeThickness, maxHeight).translate(new Point2d(halfMaxWidth , -halfMaxHeight));
-        BaseShape letterA = bigEllipse.add(verticalRect);
-        return letterA;
+        return bigEllipse.add(verticalRect);
     }
 
     public static BaseShape create_C() {
